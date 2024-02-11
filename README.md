@@ -1,5 +1,13 @@
-# NLW Orders 🍔 
-Essa aplicação foi desenvolvida durante o NLW Experts da Rocketseat utilizando React Native, Expo, NodeJS, TailwindCss /NativeWind, Zustand e AsyncStorage.
+<h1 align="center" style="font-weight: bold;">NLW Orders 🍔</h1>  
+<p align="center">
+    <b>Essa aplicação foi desenvolvida durante o NLW Experts da Rocketseat utilizando as seguintes tecnologias: </b>
+    ⭐ React Native <br>
+    ⭐ Expo <br>
+    ⭐ NodeJS <br>
+    ⭐ TailwindCss/NativeWind <br>
+    ⭐ Zustand <br>
+    ⭐ AsyncStorage <br>
+</p>
 
 ![image](https://github.com/luanasa/nlw-expect-rn/assets/38231334/c7a6998c-d003-45d7-b075-bb77425d0209)
 
