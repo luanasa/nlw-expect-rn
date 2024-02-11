@@ -1,33 +1,38 @@
-import { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import { View, FlatList, SectionList, Text } from 'react-native';
 import { Link } from 'expo-router';
 
+import { useCartStore } from '@/stores/cart-store';
 import { CATEGORIES, MENU, ProductProps } from '@/utils/data/products';
 
 import { Header } from '@/components/header';
-import { CategoryButton } from '@/components/category-button';
 import { Product } from '@/components/product';
-import { useCartStore } from '@/stores/cart-store';
+import { CategoryButton } from '@/components/category-button';
 
 export default function Home() {
-  const cartStore = useCartStore()
+  const cartStore = useCartStore();
   const [category, setCategory] = useState(CATEGORIES[0]);
 
-  const sectionListRef = useRef<SectionList<ProductProps>>(null)
+  const sectionListRef = useRef<SectionList<ProductProps>>(null);
 
-  const cartQuantityItems = cartStore.products.reduce((total, product) => total + product.quantity, 0)
+  const cartQuantityItems = cartStore.products.reduce(
+    (total, product) => total + product.quantity,
+    0,
+  );
 
   function handleCategorySelect(selectedCategory: string) {
-    setCategory(selectedCategory)
+    setCategory(selectedCategory);
 
-    const sectionIndex = CATEGORIES.findIndex((category) => category === selectedCategory)
+    const sectionIndex = CATEGORIES.findIndex(
+      (category) => category === selectedCategory,
+    );
 
     if (sectionListRef.current) {
       sectionListRef.current.scrollToLocation({
         animated: true,
         sectionIndex,
         itemIndex: 0,
-      })
+      });
     }
   }
 
@@ -52,7 +57,7 @@ export default function Home() {
       />
 
       <SectionList
-      ref={sectionListRef}
+        ref={sectionListRef}
         sections={MENU}
         keyExtractor={(item) => item.id}
         stickySectionHeadersEnabled={false}
@@ -61,14 +66,12 @@ export default function Home() {
             <Product data={item} />
           </Link>
         )}
-        renderSectionHeader={({ section: { title }}) => (
-        <Text className='text-xl text-white font-heading mt-8 mb-3'>
-          {title}
-        </Text>
-        )} 
-        className='flex-1 p-5' 
+        renderSectionHeader={({ section: { title } }) => (
+          <Text className="text-xl text-white font-heading mt-8 mb-3">{title}</Text>
+        )}
+        className="flex-1 p-5"
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ paddingBottom:100 }}
+        contentContainerStyle={{ paddingBottom: 100 }}
       />
     </View>
   );
