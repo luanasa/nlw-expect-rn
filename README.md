@@ -2,12 +2,15 @@
 <p align="center">
     <b>Essa aplicação foi desenvolvida durante o NLW Experts da Rocketseat utilizando as seguintes tecnologias: </b>
 </p>
+<span align="center">
     ⭐ React Native <br>
     ⭐ Expo <br>
     ⭐ NodeJS <br>
     ⭐ TailwindCss/NativeWind <br>
     ⭐ Zustand <br>
     ⭐ AsyncStorage <br> <br>
+</span>
+    
 
 ![image](https://github.com/luanasa/nlw-expect-rn/assets/38231334/c7a6998c-d003-45d7-b075-bb77425d0209)
 
